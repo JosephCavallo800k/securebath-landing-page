@@ -9,21 +9,18 @@
 <meta name="description" content="Secure Bath sit-in baths with a 32-inch outswing door. Sit down first. Packages starting at $13,000. Free in-home safety consultation.">
 
 <style>
-
 :root{
   --ink:#172b34;
-  --blue:#006a8c;
+  --blue:#00698c;
   --blue-dark:#004f6d;
-  --teal:#007d9e;
-  --light:#e8f2f5;
-  --lighter:#f2f7f8;
-  --white:#ffffff;
+  --teal:#007f9f;
+  --light:#e6f0f3;
+  --white:#fff;
+  --charcoal:#26343a;
   --border:#c5d9df;
 }
 
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 html{
   scroll-behavior:smooth;
@@ -34,7 +31,7 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   color:var(--ink);
   background:#fff;
-  line-height:1.4;
+  line-height:1.38;
 }
 
 .wrap{
@@ -48,12 +45,13 @@ body{
 ========================= */
 
 header{
-  background:#fff;
-  border-bottom:2px solid var(--border);
-  padding:10px 0;
+  background:var(--charcoal);
+  padding:7px 0;
+  height:70px;
 }
 
 .header-inner{
+  height:56px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -62,93 +60,95 @@ header{
 
 .logo{
   display:block;
+  height:66px;
   width:auto;
-  height:78px;
-  max-width:340px;
+  max-width:310px;
   object-fit:contain;
 }
 
 .top-phone{
   display:inline-block;
-  color:var(--blue-dark);
-  font-size:26px;
+  color:#fff;
+  font-size:25px;
   font-weight:900;
   text-decoration:none;
   white-space:nowrap;
 }
 
+.top-phone:before{
+  content:"CALL NOW: ";
+  color:#fff;
+}
+
 .top-phone:hover{
-  color:var(--teal);
+  color:#d9f5fa;
 }
 
 
 /* =========================
-   MAIN AD / FIRST SCREEN
+   FIRST SCREEN / MAIN AD
 ========================= */
 
 .hero{
-  background:
-    linear-gradient(135deg,#e4f0f3 0%,#d7e9ee 100%);
-  padding:20px 0 24px;
+  background:linear-gradient(135deg,#e3eef1 0%,#d4e7ec 100%);
+  padding:17px 0 19px;
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(430px,560px);
-  gap:36px;
+  grid-template-columns:minmax(0,1fr) minmax(400px,510px);
+  column-gap:30px;
+  row-gap:12px;
   align-items:center;
 }
 
-
-/* LEFT SIDE */
-
 .hero-copy{
-  padding:4px 0;
+  padding:0;
 }
 
 .eyebrow{
   color:var(--blue-dark);
-  font-size:18px;
+  font-size:17px;
   font-weight:900;
-  letter-spacing:1px;
-  margin-bottom:7px;
+  letter-spacing:.8px;
+  margin-bottom:4px;
 }
 
 h1{
-  font-size:clamp(40px,4.3vw,59px);
-  line-height:.98;
-  letter-spacing:-1.4px;
-  margin:0 0 16px;
+  font-size:clamp(38px,4.2vw,55px);
+  line-height:.97;
+  letter-spacing:-1.5px;
+  margin:0 0 12px;
 }
 
 .headline2{
-  font-size:clamp(24px,2.5vw,32px);
-  line-height:1.12;
+  font-size:clamp(23px,2.45vw,31px);
+  line-height:1.08;
   font-weight:900;
-  margin-bottom:16px;
+  margin-bottom:12px;
 }
 
 .headline2 strong{
-  color:var(--blue);
+  color:var(--blue-dark);
 }
 
 .reason{
-  font-size:18px;
-  line-height:1.38;
-  max-width:540px;
+  font-size:17px;
+  line-height:1.32;
+  max-width:535px;
 }
 
 .reason-title{
   display:block;
   color:var(--blue-dark);
-  font-size:25px;
+  font-size:24px;
   font-weight:900;
-  line-height:1.1;
-  margin-bottom:4px;
+  line-height:1.05;
+  margin-bottom:3px;
 }
 
 .long-copy{
-  margin-top:9px;
+  margin-top:7px;
 }
 
 .long-copy strong{
@@ -157,85 +157,81 @@ h1{
 
 
 /* =========================
-   PRODUCT IMAGE
+   PRODUCT PHOTO
 ========================= */
 
 .photo{
   width:100%;
-  max-width:560px;
-  aspect-ratio:1 / 1;
+  max-width:510px;
+  aspect-ratio:1/1;
   margin:0 auto;
-  border-radius:14px;
-  background:#fff;
+  border-radius:12px;
   overflow:hidden;
+  background:#fff;
   border:4px solid #fff;
-  box-shadow:0 10px 30px rgba(23,50,61,.16);
+  box-shadow:0 7px 24px rgba(23,50,61,.17);
 }
 
 .photo img{
   width:100%;
   height:100%;
+  display:block;
   object-fit:cover;
   object-position:center;
-  display:block;
 }
 
 
 /* =========================
-   BENEFITS + FIRST CTA
+   BENEFITS + MAIN CTA
 ========================= */
 
 .hero-bottom{
-  grid-column:1 / -1;
-  margin-top:-4px;
+  grid-column:1/-1;
+  margin-top:0;
 }
 
 .quick{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:10px;
   width:min(900px,100%);
-  margin:0 auto 13px;
+  margin:0 auto 9px;
 }
 
 .quick div{
   background:#fff;
   border:1px solid var(--border);
-  border-radius:9px;
-  padding:11px 8px;
+  border-radius:8px;
+  padding:8px 7px;
   text-align:center;
-  box-shadow:0 3px 12px rgba(0,0,0,.055);
-  font-size:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  font-size:14px;
   font-weight:800;
 }
 
 .quick b{
   display:block;
   color:var(--blue-dark);
-  font-size:21px;
-  line-height:1.05;
-  margin-bottom:3px;
+  font-size:20px;
+  line-height:1.03;
+  margin-bottom:2px;
 }
-
-
-/* =========================
-   CALL BUTTON
-========================= */
 
 .cta{
   display:block;
-  width:min(680px,100%);
+  width:min(650px,100%);
   margin:0 auto;
-  padding:16px 18px;
+  padding:14px 12px;
   background:var(--blue-dark);
   color:#fff;
   text-align:center;
   text-decoration:none;
-  border-radius:9px;
-  font-size:clamp(27px,3vw,37px);
+  border-radius:8px;
+  font-size:clamp(26px,3vw,36px);
   font-weight:900;
+  line-height:1.05;
   white-space:nowrap;
-  box-shadow:0 5px 14px rgba(0,86,117,.22);
+  box-shadow:0 4px 12px rgba(0,79,109,.25);
 }
 
 .cta:hover{
@@ -244,27 +240,27 @@ h1{
 
 .cta-sub{
   text-align:center;
-  font-size:16px;
+  font-size:15px;
   font-weight:900;
-  margin-top:6px;
+  margin-top:4px;
 }
 
 
 /* =========================
-   SECOND SECTION
+   LOWER SECTION
 ========================= */
 
 .proof{
   background:#fff;
   border-top:1px solid var(--border);
-  padding:42px 0 38px;
+  padding:34px 0 30px;
   text-align:center;
 }
 
 .proof-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:28px;
+  gap:26px;
   align-items:center;
   max-width:1000px;
   margin:auto;
@@ -275,45 +271,46 @@ h1{
 }
 
 h2{
-  font-size:clamp(31px,3.8vw,44px);
+  font-size:clamp(30px,3.5vw,42px);
   line-height:1.04;
   letter-spacing:-.7px;
-  margin:0 0 12px;
+  margin:0 0 10px;
 }
 
 .proof-copy p{
-  font-size:19px;
-  margin:8px 0;
+  font-size:18px;
+  margin:7px 0;
 }
 
 .proof-box{
   background:var(--light);
   border:1px solid var(--border);
-  border-radius:12px;
-  padding:20px;
+  border-radius:10px;
+  padding:18px;
 }
 
 .proofline{
   color:var(--blue-dark);
-  font-size:27px;
+  font-size:26px;
   line-height:1.08;
   font-weight:900;
-  margin-bottom:9px;
+  margin-bottom:7px;
 }
 
 .proof-box p{
-  font-size:17px;
-  margin:7px 0 14px;
+  font-size:16px;
+  margin:6px 0 12px;
 }
 
 .proof-box .cta{
-  font-size:29px;
-  padding:14px 10px;
+  font-size:27px;
+  padding:13px 7px;
+  white-space:nowrap;
 }
 
 .learn{
   display:inline-block;
-  margin-top:20px;
+  margin-top:18px;
   color:var(--blue-dark);
   font-size:19px;
   font-weight:900;
@@ -328,7 +325,7 @@ h2{
   font-size:15px;
   font-weight:800;
   color:#566b74;
-  margin-top:19px;
+  margin-top:16px;
 }
 
 
@@ -338,7 +335,7 @@ h2{
 
 footer{
   text-align:center;
-  padding:16px;
+  padding:14px;
   border-top:1px solid var(--border);
   font-size:12px;
   color:#687980;
@@ -351,13 +348,17 @@ footer{
 
 @media(max-width:900px){
 
+  header{
+    height:auto;
+  }
+
   .hero{
-    padding:24px 0 28px;
+    padding:20px 0 24px;
   }
 
   .hero-grid{
     grid-template-columns:1fr;
-    gap:20px;
+    gap:17px;
   }
 
   .hero-copy{
@@ -369,11 +370,7 @@ footer{
   }
 
   .photo{
-    max-width:560px;
-  }
-
-  .hero-bottom{
-    grid-column:auto;
+    max-width:510px;
   }
 
   .proof-grid{
@@ -383,12 +380,11 @@ footer{
   .proof-copy{
     text-align:center;
   }
-
 }
 
 
 /* =========================
-   PHONE
+   MOBILE
 ========================= */
 
 @media(max-width:600px){
@@ -398,57 +394,60 @@ footer{
   }
 
   header{
-    padding:8px 0;
+    padding:5px 0;
   }
 
   .header-inner{
+    height:auto;
     flex-direction:column;
-    gap:3px;
+    gap:2px;
   }
 
   .logo{
-    height:48px;
-    max-width:230px;
+    height:58px;
+    max-width:260px;
   }
 
   .top-phone{
-    font-size:22px;
+    font-size:20px;
+  }
+
+  .top-phone:before{
+    content:"CALL NOW: ";
   }
 
   .hero{
-    padding:18px 0 25px;
+    padding:16px 0 23px;
   }
 
   .hero-grid{
-    gap:15px;
+    gap:14px;
   }
 
   .eyebrow{
     font-size:15px;
-    letter-spacing:.7px;
   }
 
   h1{
-    font-size:39px;
-    line-height:1;
-    letter-spacing:-.7px;
-    margin-bottom:13px;
+    font-size:38px;
+    line-height:.98;
+    letter-spacing:-.8px;
+    margin-bottom:11px;
   }
 
   .headline2{
-    font-size:24px;
-    margin-bottom:13px;
+    font-size:23px;
+    margin-bottom:11px;
   }
 
   .photo{
     width:100%;
-    aspect-ratio:1 / 1;
-    border-radius:11px;
+    aspect-ratio:1/1;
     border-width:3px;
   }
 
   .reason{
-    font-size:17px;
+    font-size:16px;
   }
 
   .reason-title{
@@ -456,17 +455,16 @@ footer{
   }
 
   .long-copy{
-    margin-top:8px;
+    margin-top:7px;
   }
 
   .quick{
     grid-template-columns:1fr;
-    gap:7px;
-    margin-top:0;
+    gap:6px;
   }
 
   .quick div{
-    padding:10px 7px;
+    padding:9px 6px;
   }
 
   .quick b{
@@ -475,8 +473,8 @@ footer{
 
   .cta{
     width:100%;
-    font-size:28px;
-    padding:15px 8px;
+    font-size:27px;
+    padding:14px 5px;
   }
 
   .cta-sub{
@@ -484,35 +482,56 @@ footer{
   }
 
   .proof{
-    padding:34px 0;
+    padding:30px 0;
   }
 
   h2{
-    font-size:33px;
+    font-size:32px;
   }
 
   .proof-copy p{
-    font-size:18px;
+    font-size:17px;
   }
 
   .proof-box{
-    padding:18px;
+    padding:16px;
   }
 
   .proofline{
-    font-size:25px;
+    font-size:24px;
   }
 
   .proof-box .cta{
-    font-size:27px;
+    font-size:25px;
   }
 
   .learn{
     font-size:17px;
   }
 
-  .smallcred{
-    line-height:1.5;
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media(max-width:380px){
+
+  .top-phone{
+    font-size:18px;
+  }
+
+  h1{
+    font-size:34px;
+  }
+
+  .headline2{
+    font-size:21px;
+  }
+
+  .cta{
+    font-size:24px;
   }
 
 }
@@ -549,16 +568,14 @@ footer{
 <main>
 
 
-<!-- =================================
-     MAIN AD / FIRST SCREEN
-================================= -->
+<!-- =====================================
+     MAIN AD
+===================================== -->
 
 <section class="hero">
 
   <div class="wrap hero-grid">
 
-
-    <!-- LEFT SIDE -->
 
     <div class="hero-copy">
 
@@ -566,19 +583,16 @@ footer{
         DON'T WAIT FOR A FALL
       </div>
 
-
       <h1>
         Stay Safe.<br>
         Stay Independent.<br>
         Stay in Your Home.
       </h1>
 
-
       <div class="headline2">
         Why step into a walk-in tub when you can
         <strong>sit down first?</strong>
       </div>
-
 
       <div class="reason">
 
@@ -587,7 +601,6 @@ footer{
         </span>
 
         Sit down first. Then bring your legs in.
-
 
         <div class="long-copy">
 
@@ -607,8 +620,6 @@ footer{
     </div>
 
 
-    <!-- RIGHT SIDE -->
-
     <div class="photo">
 
       <img
@@ -618,8 +629,6 @@ footer{
 
     </div>
 
-
-    <!-- BENEFITS + CALL -->
 
     <div class="hero-bottom">
 
@@ -650,7 +659,6 @@ footer{
         CALL 702-789-7780
       </a>
 
-
       <div class="cta-sub">
         FREE IN-HOME SAFETY CONSULTATION
       </div>
@@ -663,9 +671,9 @@ footer{
 </section>
 
 
-<!-- =================================
-     SHORT SECOND SECTION
-================================= -->
+<!-- =====================================
+     LOWER INFORMATION
+===================================== -->
 
 <section class="proof">
 
@@ -705,14 +713,12 @@ footer{
         Then decide.
       </p>
 
-
       <a
         class="cta"
         href="tel:7027897780"
       >
         CALL 702-789-7780
       </a>
-
 
       <div class="cta-sub">
         FREE IN-HOME SAFETY CONSULTATION
@@ -735,7 +741,6 @@ footer{
       LEARN MORE ABOUT OUR SIT-IN BATH →
     </a>
 
-
     <div class="smallcred">
       10+ Years Experience · BBB Accredited · Financing Available · Veteran Savings Available
     </div>
@@ -749,9 +754,7 @@ footer{
 
 
 <footer>
-
   *Starting price and warranty subject to applicable terms and conditions.
-
 </footer>
 
 
