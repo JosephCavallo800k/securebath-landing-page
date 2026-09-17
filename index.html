@@ -169,8 +169,8 @@ header{
 
 .hero-grid{
   display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(280px,.9fr) minmax(0,1fr);
-  gap:26px;
+  grid-template-columns:minmax(0,1.15fr) minmax(320px,1fr) minmax(0,1.15fr);
+  gap:32px;
   align-items:center;
 }
 
@@ -1044,18 +1044,16 @@ footer{
 <header>
   <div class="wrap header-inner">
 
-    <img
-      class="logo"
-      src="logo.png"
-      alt="Secure Bath"
-    >
+    <div class="top-message">
+      YOUR “NO STEP. NO SLIP. NO STRESS.” OPTION
+    </div>
 
     <a
       class="top-phone"
       href="tel:7027897780"
       onclick="gtag('event', 'conversion', {'send_to': 'AW-18241823645/81K2COyGrOscEJ3HsPpD'});"
     >
-      702-789-7780
+      CALL NOW&nbsp;&nbsp;702-789-7780
     </a>
 
   </div>
@@ -1075,14 +1073,18 @@ footer{
 
     <div class="hero-intro">
 
-      <div class="eyebrow">
-        LAS VEGAS &amp; HENDERSON, NEVADA
-      </div>
+   <div class="eyebrow">
+  LAS VEGAS &amp; HENDERSON, NEVADA
+</div>
 
-      <h1>
-        Welcome to Secure Bath
-      </h1>
-
+<h1 class="welcome-heading">
+  WELCOME TO
+  <img
+    class="hero-logo"
+    src="logo.png"
+    alt="Secure Bath"
+  >
+</h1>
       <p>
         A different approach to the walk-in bath —
         designed around sitting down first.
@@ -1154,7 +1156,7 @@ footer{
             controls
             playsinline
             preload="metadata"
-            poster="commercial-poster.webp"
+            poster="person-bath-3.webp"
           >
             <source src="LandingMP4.mp4" type="video/mp4">
             Your browser does not support video playback.
