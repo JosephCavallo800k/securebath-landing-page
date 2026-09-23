@@ -1876,8 +1876,20 @@ footer{
     .addEventListener("click", function () {
       document.getElementById("secure-bath-assistant-open").style.display = "none";
       document.getElementById("secure-bath-assistant").style.display = "block";
-    });
+     });
 </script>
+
+<style>
+  @media (max-width: 600px) {
+    #secure-bath-assistant {
+      left: 10px !important;
+      right: 10px !important;
+      width: auto !important;
+      bottom: 10px !important;
+      height: calc(100vh - 20px) !important;
+    }
+  }
+</style>
 
 </body>
 </html>
