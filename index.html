@@ -381,7 +381,28 @@ header{
   font-size:13px;
   font-weight:800;
 }
+.video-chat-link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:10px auto 0;
+  padding:13px 20px;
+  background:var(--mint);
+  color:#000;
+  text-decoration:none;
+  border-radius:8px;
+  font-family:Montserrat,Inter,Arial,sans-serif;
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-align:center;
+  transition:.2s ease;
+}
 
+.video-chat-link:hover{
+  background:#fff;
+  color:#000;
+}
 
 /* =========================================================
    HERO CTA
@@ -1347,9 +1368,17 @@ footer{
 
         </div>
 
-        <div class="video-caption">
+             <div class="video-caption">
           See why Secure Bath takes a different approach.
         </div>
+
+        <a
+          href="#"
+          class="video-chat-link"
+          id="video-chat-link"
+        >
+          CLICK HERE TO SEE IF WE CAN HELP →
+        </a>
 
       </div>
 
