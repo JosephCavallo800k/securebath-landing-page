@@ -1,7 +1,7 @@
 ```html
 <!doctype html>
 <html lang="en">
-<headf
+<head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -263,6 +263,25 @@ header{
   font-weight:900;
   letter-spacing:1.4px;
   text-transform:uppercase;
+}
+
+.secondary-video{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+}
+
+.secondary-video-frame{
+  overflow:hidden;
+  background:#000;
+  border-radius:13px;
+}
+
+.secondary-video-frame video{
+  display:block;
+  width:100%;
+  height:auto;
+  background:#000;
 }
 
 
@@ -1258,6 +1277,19 @@ footer{
         <div class="product-label">
           Secure Bath Sit-In Bath
         </div>
+        <div class="secondary-video">
+  <div class="secondary-video-frame">
+    <video
+      id="secure-bath-video"
+      controls
+      playsinline
+      preload="metadata"
+    >
+      <source src="Secure%20Bath.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
+</div>
 
       </div>
 
@@ -1303,6 +1335,7 @@ footer{
         <div class="video-frame">
 
           <video
+            id="landing-video"
             controls
             playsinline
             preload="metadata"
@@ -1730,7 +1763,8 @@ footer{
     </p>
 
     <a
-      class="explore-button"
+      id="main-website-link"
+class="explore-button"
       href="https://securebaths.com/walk-in-tub-installation-henderson"
       target="_blank"
       rel="noopener"
@@ -1786,7 +1820,112 @@ footer{
 <footer>
   *Lifetime warranty subject to applicable terms and conditions.
 </footer>
+<script>
+  (function () {
+    function setupVideoTracking(videoId, videoName) {
+      var video = document.getElementById(videoId);
+      if (!video) return;
 
+      var started = false;
+      var milestones = {
+        25: false,
+        50: false,
+        75: false,
+        100: false
+      };
+
+      var watchStart = null;
+      var totalWatchTime = 0;
+
+      function sendEvent(eventName, extra) {
+        if (typeof gtag !== "function") return;
+
+        var params = {
+          video_name: videoName
+        };
+
+        if (extra) {
+          Object.keys(extra).forEach(function (key) {
+            params[key] = extra[key];
+          });
+        }
+
+        gtag("event", eventName, params);
+      }
+
+      video.addEventListener("play", function () {
+        if (!started) {
+          started = true;
+
+          sendEvent("video_start");
+
+          watchStart = Date.now();
+        } else if (!watchStart) {
+          watchStart = Date.now();
+        }
+      });
+
+      video.addEventListener("timeupdate", function () {
+        if (!video.duration || !isFinite(video.duration)) return;
+
+        var percent = (video.currentTime / video.duration) * 100;
+
+        [25, 50, 75, 100].forEach(function (milestone) {
+          if (percent >= milestone && !milestones[milestone]) {
+            milestones[milestone] = true;
+
+            if (milestone === 100) {
+              sendEvent("video_complete", {
+                video_percent: 100
+              });
+            } else {
+              sendEvent("video_progress", {
+                video_percent: milestone
+              });
+            }
+          }
+        });
+      });
+
+      function recordWatchTime() {
+        if (!watchStart) return;
+
+        totalWatchTime += (Date.now() - watchStart) / 1000;
+        watchStart = null;
+
+        if (totalWatchTime > 0) {
+          sendEvent("video_watch_time", {
+            watch_time_seconds: Math.round(totalWatchTime)
+          });
+        }
+      }
+
+      video.addEventListener("pause", recordWatchTime);
+      video.addEventListener("ended", recordWatchTime);
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") {
+          recordWatchTime();
+        }
+      });
+    }
+
+    setupVideoTracking("landing-video", "LandingMP4");
+    setupVideoTracking("secure-bath-video", "Secure Bath");
+
+    var websiteLink = document.getElementById("main-website-link");
+
+    if (websiteLink) {
+      websiteLink.addEventListener("click", function () {
+        if (typeof gtag !== "function") return;
+
+        gtag("event", "main_website_click", {
+          link_url: websiteLink.href
+        });
+      });
+    }
+  })();
+</script>
 <!-- Secure Bath Assistant -->
 <div
   id="secure-bath-assistant"
