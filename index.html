@@ -1941,27 +1941,29 @@ class="explore-button"
 
     setupVideoTracking("landing-video", "LandingMP4");
     setupVideoTracking("secure-bath-video", "Secure Bath");
-    var videoChatLink = document.getElementById("video-chat-link");
-    var chatAssistant = document.getElementById("secure-bath-assistant");
-    var chatOpenButton = document.getElementById("secure-bath-assistant-open");
+   document.addEventListener("DOMContentLoaded", function () {
+  var videoChatLink = document.getElementById("video-chat-link");
+  var chatAssistant = document.getElementById("secure-bath-assistant");
+  var chatOpenButton = document.getElementById("secure-bath-assistant-open");
 
-    if (videoChatLink && chatAssistant) {
-      videoChatLink.addEventListener("click", function (event) {
-        event.preventDefault();
+  if (videoChatLink && chatAssistant) {
+    videoChatLink.addEventListener("click", function (event) {
+      event.preventDefault();
 
-        chatAssistant.style.display = "block";
+      chatAssistant.style.display = "block";
 
-        if (chatOpenButton) {
-          chatOpenButton.style.display = "none";
-        }
+      if (chatOpenButton) {
+        chatOpenButton.style.display = "none";
+      }
 
-        if (typeof gtag === "function") {
-          gtag("event", "video_chat_click", {
-            video_name: "LandingMP4"
-          });
-        }
-      });
-    }
+      if (typeof gtag === "function") {
+        gtag("event", "video_chat_click", {
+          video_name: "LandingMP4"
+        });
+      }
+    });
+  }
+});
     var websiteLink = document.getElementById("main-website-link");
 
     if (websiteLink) {
